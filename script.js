@@ -6,13 +6,16 @@ function formValidFirstName(){
     let getFirstName = document.querySelector('#getFirstName');
     console.log(firstName.value);
     let newSpan = document.createElement('span');
-    newSpan.innerHTML = '&#x2717;'; //X
     if(firstName.value.length !== 0){
         newSpan.innerHTML = '&#x2713;'  //V
+        newSpan.className = 'successResult';
         getFirstName.appendChild(newSpan);
     }else{
         let newErrorSpan = document.createElement('span');
         newErrorSpan.innerHTML = 'please give us a vaild name';
+        newSpan.innerHTML = '&#x2717;'; //X
+        newErrorSpan.className = "failedResult";
+        newSpan.className = "failedResult";
         getFirstName.appendChild(newSpan);
         getFirstName.appendChild(newErrorSpan);
     }
@@ -23,13 +26,17 @@ function formValidLastName(){
     let getLastName = document.querySelector('#getLastName');
     console.log(lastName.value);
     let newSpan = document.createElement('span');
-    newSpan.innerHTML = '&#x2717;'; //X
+    
     if(lastName.value.length !== 0){
         newSpan.innerHTML = '&#x2713;'  //V
+        newSpan.className = 'successResult';
         getLastName.appendChild(newSpan);
     }else{
         let newErrorSpan = document.createElement('span');
         newErrorSpan.innerHTML = 'please give us a vaild name';
+        newSpan.innerHTML = '&#x2717;'; //X
+        newErrorSpan.className = "failedResult";
+        newSpan.className = "failedResult";
         getLastName.appendChild(newSpan);
         getLastName.appendChild(newErrorSpan);
     }
@@ -43,21 +50,30 @@ function formValidPhoneNum(){
     let newSpan = document.createElement('span');
     //console.log(typeof(getPhoneNum.value));
     newSpan.innerHTML = '&#x2717;'; //X
+    let newSpan2 = document.createElement('span');
     if(phoneNum.value.length !== 0){
         if(phoneNum.value === altPhoneNum.value){
             newSpan.innerHTML = '&#x2713;'  //V
-            getAltPhoneNum.appendChild(newSpan);
+            newSpan2.innerHTML = '&#x2713;'  //V
+            newSpan.className = 'successResult';
+            newSpan2.className = "successResult";
+            getPhoneNum.appendChild(newSpan);
+            getAltPhoneNum.appendChild(newSpan2);
         }else{
             let newErrorSpan = document.createElement('span');
             newErrorSpan.innerHTML = 'Those phone numbers don\'t match. Please check and try again';
+            newErrorSpan.className = "failedResult";
+            newSpan.className = "failedResult";
             getAltPhoneNum.appendChild(newSpan);
             getAltPhoneNum.appendChild(newErrorSpan);
         }
     }else{
         let newErrorSpan = document.createElement('span');
-        let newSpan2 = document.createElement('span');
         newSpan2.innerHTML = '&#x2717;'; //X
         newErrorSpan.innerHTML = 'please give us a vaild phone number';
+        newErrorSpan.className = "failedResult";
+        newSpan.className = "failedResult";
+        newSpan2.className = "failedResult";
         getPhoneNum.appendChild(newSpan);
         getPhoneNum.appendChild(newErrorSpan);
         getAltPhoneNum.appendChild(newSpan2);
@@ -72,10 +88,13 @@ function formValidEmail(){
     newSpan.innerHTML = '&#x2717;'; //X
     if(emailAdd.value.length !== 0){
         newSpan.innerHTML = '&#x2713;'  //V
+        newSpan.className = 'successResult';
         getEmailAdd.appendChild(newSpan);
     }else{
         let newErrorSpan = document.createElement('span');
         newErrorSpan.innerHTML = 'please give us a vaild email address';
+        newErrorSpan.className = "failedResult";
+        newSpan.className = "failedResult";
         getEmailAdd.appendChild(newSpan);
         getEmailAdd.appendChild(newErrorSpan);
     }

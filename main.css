@@ -4,3 +4,11 @@
     /* justify-content: space-around;
     justify-content: space-between; */
 }
+
+.failedResult{
+    color: red;
+}
+
+.successResult{
+    color: green;
+}
